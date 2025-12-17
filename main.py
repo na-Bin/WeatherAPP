@@ -4,51 +4,6 @@ from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout)
 from PyQt5.QtCore import Qt
 
-
-# class WeatherApp(QWidget):
-#     def __init__(self):
-#         super().__init__()
-#         self.initUI()
-
-#     def initUI(self):
-#         self.setWindowTitle('Weather App')
-
-#         self.layout = QVBoxLayout()
-
-#         self.city_input = QLineEdit(self)
-#         self.city_input.setPlaceholderText('Enter city name')
-#         self.layout.addWidget(self.city_input)
-
-#         self.get_weather_button = QPushButton('Get Weather', self)
-#         self.get_weather_button.clicked.connect(self.fetch_weather)
-#         self.layout.addWidget(self.get_weather_button)
-
-#         self.result_label = QLabel('', self)
-#         self.result_label.setAlignment(Qt.AlignCenter)
-#         self.layout.addWidget(self.result_label)
-
-#         self.setLayout(self.layout)
-#         self.resize(300, 200)
-
-#     def fetch_weather(self):
-#         city = self.city_input.text()
-#         api_key = 'your_api_key_here'  # Replace with your OpenWeatherMap API key
-#         url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
-
-#         try:
-#             response = requests.get(url)
-#             data = response.json()
-
-#             if data['cod'] == 200:
-#                 temp = data['main']['temp']
-#                 description = data['weather'][0]['description']
-#                 self.result_label.setText(
-#                     f'Temperature: {temp}°C\nDescription: {description}')
-#             else:
-#                 self.result_label.setText('City not found. Please try again.')
-#         except Exception as e:
-#             self.result_label.setText('Error fetching data. Please try again.')
-
 class WeatherApp(QWidget):
     def __init__(self):
         super().__init__()
@@ -216,3 +171,4 @@ if __name__ == "__main__":
     weather_app = WeatherApp()
     weather_app.show()
     sys.exit(app.exec_())
+
